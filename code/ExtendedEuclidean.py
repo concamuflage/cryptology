@@ -24,24 +24,41 @@ def extended_euclidean(int1,int2):
 def extended_euclidean_2(num1,num2):
     """
     using extended euclidean
-    :param num1: integer
+    :param num1: integer, num1 must be smaller than num2
     :param num2: integer
     :return: a tuple of integers (x,y), such that x*int1+y*int2 = gcd(int1,int2)
     """
 
-    if num1 >= num2:
-        big_num = num1
-        small_num = num2
-    else:
-        big_num = num2
-        small_num = num1
+    if num1 > num2:
+        raise Exception("num1 must be smaller than num2")
 
-    if small_num == 0:
-        return big_num, 0,1
+    result = extended_euclidean_2_helper(num1,num2)
 
-    remainder = big_num % small_num
-    quotient = big_num // small_num
+    return (result[1],result[2])
 
-    return euclidean(remainder,quotient)
+def extended_euclidean_2_helper(num1,num2):
+
+    """using Diophantine equation to
+    :param num1: integer, must be smaller than num2
+    :param num2: integer
+    :return: a tuple of integers (x,y), such that x*int1+y*int2 = gcd(int1,int2)
+    """
+    if num1 == 0:
+        return num2, 0, 1
+
+    gcd, x1, y1 = extended_euclidean_2_helper(num2%num1,num1)
+
+    # the following formulas are from Diophantine equations
+    # for detailed explanation, please check README or check out Diophantine equations.
+
+    x = y1 - (num2//num1)*x1
+    y = x1
+
+    return (gcd,x,y)
+
+
+
+
+
 
 
