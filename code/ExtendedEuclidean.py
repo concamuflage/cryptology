@@ -56,7 +56,7 @@ def extended_euclidean_2_helper(num1,num2):
 
     return (gcd,x,y)
 
-
+# print(extended_euclidean_2(6066,9511))
 
 
 

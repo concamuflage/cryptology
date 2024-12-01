@@ -15,6 +15,7 @@ class MyTestClass(unittest.TestCase):
 
 
     def test2(self):
+        self.assertEqual(is_prime(1), False)
         self.assertEqual(is_prime(6), False)
         self.assertEqual(is_prime(100), False)
         self.assertEqual(is_prime(1849), False)

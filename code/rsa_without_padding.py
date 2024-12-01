@@ -87,6 +87,8 @@ def rsa_decrypt_without_private_key(public_key, ciphertex):
     plaintext = rsa_decrypt(private_key,ciphertex)
     return plaintext
 
+print(rsa_private_key_generate_given_only_n((15943,3)))
+
 
 
 
