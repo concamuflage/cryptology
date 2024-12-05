@@ -1,6 +1,9 @@
 from is_prime import is_prime
 from find_prime_divisors import find_prime_divisors
 from fast_expo_modulo import fast_expo_modulo
+from miller_rabin import miller_rabin
+
+
 def primitive_root_search(prime_number):
 
     """
@@ -9,7 +12,7 @@ def primitive_root_search(prime_number):
     :param prime_number:
     :return: a list of primitives or an empty list.
     """
-    if not is_prime(prime_number):
+    if not miller_rabin(50,prime_number):
         raise Exception("Error: the number you passed in is not a prime number")
 
     group_order = prime_number-1

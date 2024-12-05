@@ -23,7 +23,8 @@ def extended_euclidean(int1,int2):
 
 def extended_euclidean_2(num1,num2):
     """
-    using extended euclidean
+    using extended euclidean to find (x,y), with x > 0, such that x*int1+y*int2 = gcd(int1,int2) and
+
     :param num1: integer, num1 must be smaller than num2
     :param num2: integer
     :return: a tuple of integers (x,y), such that x*int1+y*int2 = gcd(int1,int2)
@@ -33,7 +34,10 @@ def extended_euclidean_2(num1,num2):
         raise Exception("num1 must be smaller than num2")
 
     result = extended_euclidean_2_helper(num1,num2)
-
+    # if inverse is negative, convert it into a positive.
+    if result[1] < 0:
+        result[1] += num2
+        result[2] -= num1
     return (result[1],result[2])
 
 def extended_euclidean_2_helper(num1,num2):
@@ -54,9 +58,11 @@ def extended_euclidean_2_helper(num1,num2):
     x = y1 - (num2//num1)*x1
     y = x1
 
-    return (gcd,x,y)
+    list = [gcd,x,y]
+    return list
 
-# print(extended_euclidean_2(6066,9511))
+if __name__ == "__main__":
+    print(extended_euclidean_2(5417,5588))
 
 
 

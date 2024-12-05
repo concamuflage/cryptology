@@ -30,7 +30,7 @@ def rsa_enrypt(public_key, plaintext):
 def rsa_private_key_generator(public_key, prime_p, prime_q):
     """
     to generate private_key
-    :param public_key: a tuple
+    :param public_key: a tuple of integers, that is (n,e)
     :param prime_p: prime number
     :param prime_q: prime number
     :return: a tuple (number,private exponent)
@@ -85,9 +85,11 @@ def rsa_decrypt_without_private_key(public_key, ciphertex):
     """
     private_key = rsa_private_key_generate_given_only_n(public_key)
     plaintext = rsa_decrypt(private_key,ciphertex)
+
     return plaintext
 
-print(rsa_private_key_generate_given_only_n((15943,3)))
+if __name__ == "__main__":
+    print(rsa_private_key_generate_given_only_n((15943,3)))
 
 
 

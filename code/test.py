@@ -1,7 +1,11 @@
-def find_x():
-    """returns a x such that x*83 is a multiple of 103"""
-    for num1 in range(1,10000):
-        for num2 in range(1,num1*103):
-            if num2*87 == 103*num1:
-                return num2
-print(find_x())
+import math
+
+from fast_exponentiation import fast_exponentiation
+
+a = 539704
+n = 1000189
+
+for b in range(20):
+    val = fast_exponentiation(539704,math.factorial(b)) - 1
+    gcd_val = math.gcd(val, n)
+    print(f"b = {b}: gcd(a^{b}! - 1, n) = {gcd_val}")

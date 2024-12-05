@@ -1,5 +1,6 @@
 def fast_exponentiation(root, power):
     """
+    it seems this algorithm starts to struggle when power = 10!
     find the result of root to the power using fast exponentiation
     root:int
     power: int
@@ -18,4 +19,5 @@ def fast_exponentiaion_helper(root,power,accumulator):
         return fast_exponentiaion_helper(root,power-1,root*accumulator)
     else: 
         return fast_exponentiaion_helper(root*root,power // 2,accumulator)
-
+if __name__ == "__main__":
+    print(fast_exponentiation(539704,131))

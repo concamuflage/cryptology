@@ -1,3 +1,8 @@
+import math
+
+from fast_exponentiation import fast_exponentiation
+
+
 def euclidean(num1 , num2):
     """
     this function uses Euclidean algorithms to compute gcd of two given numbers.
@@ -40,6 +45,10 @@ def steins(num1,num2):
         return steins(num1-num2,num2)
     else:
         return steins(num1,num2-num1)
+
+
+if __name__ == "__main__":
+    print("result",euclidean(5417,5588))
 
 
 

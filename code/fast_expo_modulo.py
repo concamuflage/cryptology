@@ -30,6 +30,6 @@ def fast_expo_modulo_helper(base,power,accumulator, modulus):
         return fast_expo_modulo_helper(base % modulus , power - 1 , base*accumulator % modulus,modulus)
     else:
         return fast_expo_modulo_helper(base*base % modulus , power // 2, accumulator,modulus)
-
-# print(fast_expo_modulo(10,27,1729))
+if __name__ == "__main__":
+    print(fast_expo_modulo(2,1729))
 
