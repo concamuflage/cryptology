@@ -1,4 +1,4 @@
-from generate_large_prime import generate_large_prime
+
 from miller_rabin import miller_rabin
 from random_prime_generator import random_prime_generator
 

@@ -1,8 +1,6 @@
 import random
-
-from generate_large_prime import generate_large_prime
 from naor_reingold import pick_relatively_prime,decimal_to_binary
-
+from random_prime_generator import random_prime_generator
 def blum_blum_shub(m):
     """
     to generate a sequence of pseudorandom bits of length m
@@ -10,12 +8,14 @@ def blum_blum_shub(m):
     """
 
     # to generate p and q such that p % 4 =3 and q % 4 = 3
+    start = 4095
+    end = 8191
 
     p,q = 2,2
     while p % 4 != 3:
-        p = generate_large_prime(15)
+        p = random_prime_generator(start,end)
     while q % 4 != 3:
-        q = generate_large_prime(15)
+        q = random_prime_generator(start,end)
     n = p*q
     # Choose a random seed in U(n)
     seed = pick_relatively_prime(n)

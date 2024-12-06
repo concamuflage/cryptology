@@ -3,7 +3,7 @@ import random
 
 from break_el_gamal import break_el_gamal
 from el_gamal import el_gamal_receiver_prepare, el_gamal_sender_prepare, el_gamal_encrypt, el_gamal_decrypt
-from generate_large_prime import generate_large_prime
+from safe_prime_generator import safe_prime_generator
 
 
 class MyTestClass(unittest.TestCase):
@@ -23,11 +23,12 @@ class MyTestClass(unittest.TestCase):
     def test(self):
         """for general cases"""
 
-        prime_length = 30
+        start = 4095
+        end = 8191
         #  for 15 runs fast
         #  for 20, runs 30 seconds,
         #  for 25 bits, runs several minutes for a single loop.
-        prime = generate_large_prime(prime_length) # the prime agreed upon
+        prime = safe_prime_generator(start,end)# the prime agreed upon
 
         for index in range(1):
             # sender prepare and send publish b and b^r

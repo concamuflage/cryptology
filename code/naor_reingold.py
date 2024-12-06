@@ -2,7 +2,8 @@ import random
 
 from EuclideanAlgo import euclidean
 from fast_expo_modulo import fast_expo_modulo
-from generate_large_prime import generate_large_prime
+from random_prime_generator import random_prime_generator
+
 
 def naor_reingold(big_n,a_pairs,g,n,x):
     """
@@ -14,7 +15,10 @@ def naor_reingold(big_n,a_pairs,g,n,x):
     :param n: the bit length of decimal x.
     :return: 1 or 0
     """
+    start = 4095
+    end = 8191
     # generate string representation of x.
+
     x_string = decimal_to_binary(n,x)
     if len(x_string) > n:
         raise Exception("x should be at most n-bit long")
@@ -29,7 +33,7 @@ def naor_reingold(big_n,a_pairs,g,n,x):
     # expand the result from a decimal to a binary of length 2n
     result_string = decimal_to_binary(2*n,result)
     # randomly generate a string of 2n length.
-    rand_number = generate_large_prime(20)
+    rand_number = random_prime_generator(start,end)
     rand_string = decimal_to_binary(2*n,rand_number)
     # compute result_string * rand_string
     return binary_string_cross_product(rand_string,result_string)

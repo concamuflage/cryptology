@@ -7,7 +7,7 @@ from miller_rabin import miller_rabin
 def primitive_root_search(prime_number):
 
     """
-    return primitive roots / generators in group Zp under multiplication
+    return primitive roots / generators in group U(prime_number)
 
     :param prime_number:
     :return: a list of primitives or an empty list.
