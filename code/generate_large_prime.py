@@ -1,17 +1,17 @@
 import random
-from sympy import nextprime
 
+from miller_rabin import miller_rabin
 
-def generate_large_prime(num_of_bits):
-    """generate a randomly large prime of length specified by the argument; the prime % 4 = 3
-    :param num_of_bits: integer
-    """
-    random_bits = random.getrandbits(num_of_bits)
-    prime = nextprime(random_bits)
-    while prime % 4 != 3:
-        prime = nextprime(prime)
-    return prime
-
-
-
+def generate_large_prime(n):
+    """for generating a n-bit prime """
+    if n < 2:
+        raise ValueError("n must be greater than 1")
+    while True:
+        decimal_number = random.getrandbits(n)
+        if decimal_number % 2 == 0:
+            continue
+        if decimal_number.bit_length() != n:
+            continue
+        if miller_rabin(50,decimal_number):
+            return decimal_number
 
