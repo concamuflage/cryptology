@@ -1,8 +1,11 @@
 import random
 
-from EuclideanAlgo import euclidean
+from decimal_to_binary import decimal_to_binary
 from fast_expo_modulo import fast_expo_modulo
 from random_prime_generator import random_prime_generator
+from generate_large_prime import generate_large_prime
+from pick_relatively_prime import pick_relatively_prime
+
 
 
 def naor_reingold(big_n,a_pairs,g,n,x):
@@ -64,26 +67,7 @@ def parameter_generator(n):
     return big_n,a_pairs,g
 
 
-def pick_relatively_prime(int):
-    """
-    randomly pick a number that is coprime to int and less than int.
-    :param int: integer
-    :return: a number less than in and is cooprime to int.
-    """
-    while True:
-        rand = random.randint(1,int)
-        if euclidean(rand,int) == 1:
-            return rand
 
-def decimal_to_binary(length,int):
-    """
-
-    :param n: an integer
-    :param int: an integer
-    :return: the binary presentation of the integer that is n bit long.
-    """
-    binary_string = bin(int)[2:].zfill(length)
-    return binary_string
 
 def binary_string_cross_product(binary_vector_1,binary_vector_2):
     """

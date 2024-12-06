@@ -29,22 +29,6 @@ class MyTestClass(unittest.TestCase):
         "testing vectors with different length"
         self.assertRaises(Exception,binary_string_cross_product,"1111","111")
 
-class MyTestClass(unittest.TestCase):
-    """testing decimal_to_binary"""
-    def test1(self):
-        self.assertEqual(decimal_to_binary(10, 0), "0000000000")
-        self.assertEqual(decimal_to_binary(10, 1), "0000000001")
-        self.assertEqual(decimal_to_binary(15, 100), "000000001100100")
-        self.assertEqual(decimal_to_binary(10,5),"0000000101")
-        self.assertEqual(decimal_to_binary(15, 100), "000000001100100")
-
-
-class MyTestClass(unittest.TestCase):
-    """testing pick_relatively prime"""
-    def test1(self):
-        self.assertEqual(euclidean(pick_relatively_prime(30),30),1)
-        self.assertEqual(euclidean(pick_relatively_prime(300),300), 1)
-        self.assertEqual(euclidean(pick_relatively_prime(300000),300000), 1)
 
 class MyTestClass(unittest.TestCase):
     """testing the parameter_generator function"""
