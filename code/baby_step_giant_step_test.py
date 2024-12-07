@@ -18,7 +18,7 @@ class MyTestClass(unittest.TestCase):
         restored_target = fast_expo_modulo(root,discrete_logarithm,prime)
         self.assertEqual(target,restored_target)
 
-    def test1(self):
+    def test2(self):
         """using the example from the text book"""
         prime = 3
         root = 2
@@ -27,7 +27,7 @@ class MyTestClass(unittest.TestCase):
         restored_target = fast_expo_modulo(root,discrete_logarithm,prime)
         self.assertEqual(target,restored_target)
 
-    def test1(self):
+    def test3(self):
         """using the example from the text book"""
         prime = 23
         root = 5
@@ -36,7 +36,7 @@ class MyTestClass(unittest.TestCase):
         restored_target = fast_expo_modulo(root, discrete_logarithm, prime)
         self.assertEqual(target, restored_target)
 
-    def test1(self):
+    def test4(self):
         """reiteratively test some random values"""
         for num in range(1000):
             if is_prime(num):

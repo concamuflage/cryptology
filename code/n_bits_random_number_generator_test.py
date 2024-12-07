@@ -3,7 +3,7 @@ import unittest
 
 class MyTestCase(unittest.TestCase):
 
-    def test(self):
+    def test1(self):
         """
         testing n_bitsrandom_number_generator function
         """
@@ -11,7 +11,7 @@ class MyTestCase(unittest.TestCase):
             result = n_bits_random_number_generator(index)
             self.assertTrue(result.bit_length() == index)
 
-    def test(self):
+    def test2(self):
         """
         testing n_bitsrandom_number_generator function
         """

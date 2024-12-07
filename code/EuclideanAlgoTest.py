@@ -3,12 +3,12 @@ from EuclideanAlgo import steins, euclidean
 
 class MyTestCase(unittest.TestCase):
 
-    # def test(self):
-    #     result1 = steins(3276,9829)
-    #     result2 = euclidian(3276,9829)
-    #     self.assertEqual(result1, result2)
+    def test1(self):
+        result1 = steins(3276,9829)
+        result2 = euclidian(3276,9829)
+        self.assertEqual(result1, result2)
 
-    def test(self):
+    def test2(self):
         for i in range(1000):
             random_num1 = random.randint(1,100)
             random_num2 = random.randint(1,100)
@@ -29,7 +29,7 @@ class MyTestCase(unittest.TestCase):
 
 
 
-    def test(self):
+    def test3(self):
     
         for i in range(10):
             random_num1 = random.randint(1,100)

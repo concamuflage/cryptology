@@ -6,7 +6,7 @@ from n_bits_safe_prime_generator import n_bits_safe_prime_generator
 class MyTestCase(unittest.TestCase):
 
 
-    def test(self):
+    def test1(self):
 
 
         for index in range(2,30):

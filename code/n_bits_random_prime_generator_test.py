@@ -6,14 +6,14 @@ class MyTestCase(unittest.TestCase):
     """
     testing n_bits random_prime_generator function
     """
-    def test(self):
+    def test1(self):
 
         for index in range(100):
             result = n_bits_random_prime_generator(index)
             self.assertTrue(result.bit_length() == index)
             self.assertTrue(is_prime(result))
 
-    def test(self):
+    def test2(self):
 
         index = 5
         result = n_bits_random_prime_generator(index)

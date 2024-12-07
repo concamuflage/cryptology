@@ -45,7 +45,7 @@ def naor_reingold(big_n,a_pairs,g,n,x):
 
 def parameter_generator(n):
     """
-    Generate 3 parameters that are needed in the naor_reingold function
+    Generate the 3 parameters that are needed in the naor_reingold function
     :param n:
     :return:
     big_n, which is an integer ;

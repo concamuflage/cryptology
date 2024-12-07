@@ -20,7 +20,7 @@ class MyTestClass(unittest.TestCase):
         plain_text = break_el_gamal(cipher_text,prime,primitive_root,b_to_power_of_r,b_to_power_of_l)
         self.assertEqual(plain_text,message)
 
-    def test(self):
+    def test2(self):
         """for general cases"""
 
         start = 4095

@@ -1,7 +1,7 @@
 from miller_rabin import convert, miller_rabin, miller_rabin_2
 import unittest
 
-class MyTestClass(unittest.TestCase):
+class MyTestClass1(unittest.TestCase):
 
     """for testing convert function"""
     def test1(self):
@@ -17,7 +17,7 @@ class MyTestClass(unittest.TestCase):
         self.assertRaises(Exception,convert,3)
 
 
-class MyTestClass(unittest.TestCase):
+class MyTestClass2(unittest.TestCase):
 
     """testing convert miller_rabin function"""
 
