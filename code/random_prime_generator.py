@@ -8,7 +8,7 @@ def random_prime_generator(start,end):
     """
     candidate = random_number_generator(start,end)
     while True:
-        if is_prime(50,candidate):
+        if is_prime(candidate):
             return candidate
         candidate = random_number_generator(start, end)
     return candidate

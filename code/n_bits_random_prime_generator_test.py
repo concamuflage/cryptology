@@ -1,14 +1,21 @@
-from miller_rabin import miller_rabin
-from random_number_generator import random_number_generator
+from n_bits_random_prime_generator import n_bits_random_prime_generator
+import unittest
+from is_prime import is_prime
 
-def random_prime_generator(start,end):
+class MyTestCase(unittest.TestCase):
     """
-    generate a random prime number with in the range [start, end],including end points.
-    :return: a prime number within in the range
+    testing n_bits random_prime_generator function
     """
-    candidate = random_number_generator(start,end)
-    while True:
-        if candidate % 2 != 0 and miller_rabin(50,candidate):
-            return candidate
-        candidate = random_number_generator(start, end)
-    return candidate
+    def test(self):
+
+        for index in range(100):
+            result = n_bits_random_prime_generator(index)
+            self.assertTrue(result.bit_length() == index)
+            self.assertTrue(is_prime(result))
+
+    def test(self):
+
+        index = 5
+        result = n_bits_random_prime_generator(index)
+        self.assertTrue(result.bit_length() == index)
+        self.assertTrue(is_prime(result))

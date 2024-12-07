@@ -1,5 +1,3 @@
-
-
 from blum_blum_shub import blum_blum_shub
 
 def n_bits_random_number_generator(n):
@@ -8,10 +6,10 @@ def n_bits_random_number_generator(n):
     :param n, integer
     :return: a n-bit random decimal number
     """
-    decimal_number = 1
-    while decimal_number.bit_length() !=n:
+    bit_sequence = blum_blum_shub(n)
+    while bit_sequence[0] !=1:
         bit_sequence = blum_blum_shub(n)
-        binary_string = ''.join(map(str, bit_sequence))
-        decimal_number = int(binary_string, 2)
+    binary_string = ''.join(map(str, bit_sequence))
+    decimal_number = int(binary_string, 2)
     return decimal_number
 

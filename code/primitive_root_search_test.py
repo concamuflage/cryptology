@@ -7,6 +7,7 @@ class MyTestClass(unittest.TestCase):
     """for testing primitive_root_search"""
 
     def test1(self):
+        self.assertEqual(primitive_root_search(2),[1])
         self.assertEqual(primitive_root_search(5),[2,3])
         self.assertEqual(primitive_root_search(3), [2])
 

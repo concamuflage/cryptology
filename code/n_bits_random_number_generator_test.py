@@ -10,3 +10,11 @@ class MyTestCase(unittest.TestCase):
         for index in range(100):
             result = n_bits_random_number_generator(index)
             self.assertTrue(result.bit_length() == index)
+
+    def test(self):
+        """
+        testing n_bitsrandom_number_generator function
+        """
+        index = 5
+        result = n_bits_random_number_generator(index)
+        self.assertTrue(result.bit_length() == index)

@@ -12,8 +12,10 @@ def primitive_root_search(prime_number):
     :param prime_number:
     :return: a list of primitives or an empty list.
     """
+    if prime_number == 2:
+        return [1]
     # test if the argument is prime
-    if is_prime(prime_number):
+    if not is_prime(prime_number):
         raise Exception("Error: the number you passed in is not a prime number")
 
     group_order = prime_number-1

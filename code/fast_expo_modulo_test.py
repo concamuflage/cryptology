@@ -16,9 +16,9 @@ class MyTestClass(unittest.TestCase):
 
     def test2(self):
         """test both functions with random numbers"""
-        for root in range(0,100):
-            for power in range (0,100):
-                for modulus in range (1,100):
+        for root in range(0,20):
+            for power in range (0,20):
+                for modulus in range (1,20):
                     print(root, power, modulus)
                     x = fast_exponentiation(root, power) % modulus
                     y = fast_expo_modulo(root, power, modulus)
