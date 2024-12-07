@@ -3,23 +3,6 @@
 # This is, of course, the Extended Euclidean Algorithm.
 
 from EuclideanAlgo import euclidean
-def extended_euclidean(int1,int2):
-    """
-    using brute force
-    :param num1: integer
-    :param num2: integer
-    :return: a tuple of integers (x,y), such that x*int1+y*int2 = gcd(int1,int2)
-    """
-
-    gcd = euclidean(int1,int2)
-
-    start = -10000
-    end = -start
-    for i in range(start,end):
-        for j in range(start,end):
-            if i* int1 +j *int2 == gcd:
-                return (i,j)
-
 
 def extended_euclidean_2(num1,num2):
     """
