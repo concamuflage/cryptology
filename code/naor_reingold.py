@@ -21,6 +21,7 @@ def naor_reingold(big_n,a_pairs,g,n,x):
     """
     start = 4095
     end = 8191
+
     # generate string representation of x.
 
     x_string = decimal_to_binary(n,x)

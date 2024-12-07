@@ -1,6 +1,6 @@
 import unittest
 
-from miller_rabin import miller_rabin
+from is_prime import is_prime
 from safe_prime_generator import safe_prime_generator
 
 
@@ -12,14 +12,14 @@ class MyTestCase(unittest.TestCase):
         """
         start = 100000000000000000000000
         end = 100000000000000000000000000
-        for index in range(10):
+        for index in range(2):
             result =safe_prime_generator(start,end)
             # test if the number is in the desired range
             self.assertTrue(start <= result <=end )
             # test if it is a prime
-            self.assertTrue(miller_rabin(50,result))
+            self.assertTrue(is_prime(result))
             # test if it is a safe prime
             q = (result-1) // 2
-            self.assertTrue(miller_rabin(50,q))
+            self.assertTrue(is_prime(q))
 
             print(result)

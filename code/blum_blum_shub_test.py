@@ -9,3 +9,4 @@ class MyTestClass(unittest.TestCase):
             result = blum_blum_shub(index)
             self.assertEqual(len(result), index)
             print(result)
+
