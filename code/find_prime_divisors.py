@@ -1,15 +1,37 @@
 
 from is_prime import is_prime
-def find_prime_divisors(int_num):
+from pollard_rho_factorization import pollard_rho_factorization
+
+
+def find_prime_divisors_helper(int_num):
     """
-    using brute force approach
+    for finding all the prime divisors of int_num using Pollard's rho method
     :param int_num: an int
     :return: a list of prime divisors of int_num
     """
-    prime_divisors = []
-    for int in range(2, int_num+1):
-        if int_num % int == 0 and is_prime(int): # if int divides int_num and int is also prime
-            prime_divisors.append(int)
-    return prime_divisors
+
+    prime_divisor = pollard_rho_factorization(int_num)
+    factor = int_num // prime_divisor
+    if is_prime(factor):
+        return [prime_divisor,factor]
+    else:
+        return find_prime_divisors_helper(factor) + [prime_divisor]
+
+def find_prime_divisors(int_num):
+    """
+    for finding all the prime divisors of int_num using Pollard's rho method
+    :param int_num: an int
+    :return: a list of prime divisors of int_num
+    """
+    # if the argument is prime
+    if is_prime(int_num):
+        return {int_num}
+    # if the argument is not a prime, try to find a prime divisor
+    result = find_prime_divisors_helper(int_num)
+    result_set = set(result)
+    return result_set
+
+
+
 if __name__ == "__main__":
-    print(find_prime_divisors(20635128451))
+    print(find_prime_divisors(2100))

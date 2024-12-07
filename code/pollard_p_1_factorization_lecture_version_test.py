@@ -1,7 +1,7 @@
 import unittest
 
 from miller_rabin import miller_rabin, miller_rabin_2
-from pollard_p_1_factorization import pollard_p_1_factorization,compute_factor_base
+from pollard_p_1_factorization_lecture_version import pollard_p_1_factorization_lecture_version,compute_factor_base
 
 
 class MyTestClass(unittest.TestCase):
@@ -24,9 +24,9 @@ class MyTestClass(unittest.TestCase):
             smoothness_bound = 500
             factor_base = compute_factor_base(smoothness_bound)
             try:
-                result = pollard_p_1_factorization(smoothness_bound, factor_base, num)
+                result = pollard_p_1_factorization_lecture_version(smoothness_bound, factor_base, num)
             except:
-                result = pollard_p_1_factorization(smoothness_bound, factor_base, num)
+                result = pollard_p_1_factorization_lecture_version(smoothness_bound, factor_base, num)
             self.assertEqual(num % result,0)
             num += 1
 
@@ -35,7 +35,7 @@ class MyTestClass(unittest.TestCase):
         num = 1038361
         smoothness_bound = 5
         factor_base = compute_factor_base(smoothness_bound)
-        divisor = pollard_p_1_factorization(smoothness_bound, factor_base, num)
+        divisor = pollard_p_1_factorization_lecture_version(smoothness_bound, factor_base, num)
         self.assertEqual(num % divisor,0)
 
     # def test3(self):

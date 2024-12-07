@@ -1,9 +1,13 @@
 import random
 
-from miller_rabin import miller_rabin
+from is_prime import is_prime
 
 def generate_large_prime(n):
-    """for generating a n-bit prime """
+    """
+    for generating an n-bit prime, based on python library function
+    :param integer
+    :return a n-bit prime integer
+    """
     if n < 2:
         raise ValueError("n must be greater than 1")
     while True:
@@ -12,6 +16,6 @@ def generate_large_prime(n):
             continue
         if decimal_number.bit_length() != n:
             continue
-        if miller_rabin(50,decimal_number):
+        if is_prime(decimal_number):
             return decimal_number
 

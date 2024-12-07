@@ -1,12 +1,10 @@
 from EuclideanAlgo import euclidean
 from fast_expo_modulo import fast_expo_modulo
 from ExtendedEuclidean import extended_euclidean_2
-from factor_into_two_primes import factor_into_two_primes
 
 def rsa_enrypt(public_key, plaintext):
     """
-
-    :param public_key: a tuple (n,e) tat presents the public key. e is the public exponent and n is the large number.
+    :param public_key: a tuple (n,e) that presents the public key. e is the public exponent and n is the large number.
     :param plaintext: int,
     :return:
     """
@@ -23,8 +21,6 @@ def rsa_enrypt(public_key, plaintext):
     # encrypt the plaintext
     ciphertext = fast_expo_modulo(plaintext,public_expo,num)
     return ciphertext
-
-
 
 
 def rsa_private_key_generator(public_key, prime_p, prime_q):
@@ -51,16 +47,6 @@ def rsa_private_key_generator(public_key, prime_p, prime_q):
 
     return (num, private_expo)
 
-def rsa_private_key_generate_given_only_n(public_key):
-    """
-    this function tries to generate the private key without knowing p, q in n = pq.
-    this function works when n in public_key is small
-    :param public_key: tuple of integers (n,public_expo)
-    :return: private_key: tuple (n, private_expo)
-    """
-    num = public_key[0]
-    prime_p, prime_q = factor_into_two_primes(num)
-    return rsa_private_key_generator(public_key,prime_p,prime_q)
 
 
 
@@ -76,20 +62,9 @@ def rsa_decrypt(private_key,ciphertext):
 
     return plaintext
 
-def rsa_decrypt_without_private_key(public_key, ciphertex):
-    """
-    first use public key to generate a privatekey and then decrypt the ciphertex
-    :param public_key: a tuple (int, int) where the second number is the public exponent
-    :param ciphertex: int
-    :return: int plaintext,
-    """
-    private_key = rsa_private_key_generate_given_only_n(public_key)
-    plaintext = rsa_decrypt(private_key,ciphertex)
-
-    return plaintext
 
 if __name__ == "__main__":
-    print(rsa_private_key_generate_given_only_n((15943,3)))
+    pass
 
 
 

@@ -1,5 +1,5 @@
 from primitive_root_search import primitive_root_search
-from is_prime import is_prime
+from miller_rabin import miller_rabin_2
 from fast_expo_modulo import fast_expo_modulo
 import unittest
 
@@ -13,8 +13,8 @@ class MyTestClass(unittest.TestCase):
     def test2(self):
 
         """test if the found primitive roots are actually primitive roots"""
-        for number in range(1000):
-            if is_prime(number):
+        for number in range(4,1000):
+            if number % 2 != 0 and miller_rabin_2(50,number):
                 primitive_roots = primitive_root_search(number)
                 print(number, primitive_roots)
                 for root in primitive_roots:

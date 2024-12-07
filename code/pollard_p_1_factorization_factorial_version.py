@@ -5,10 +5,9 @@ import math
 import random
 
 from EuclideanAlgo import euclidean
-from is_prime import is_prime
 from fast_expo_modulo import fast_expo_modulo
 from fast_exponentiation import fast_exponentiation
-from miller_rabin import miller_rabin_2
+from is_prime import is_prime
 def pollard_p_1_factorization_factorial_version(smoothness_bound,n):
     """
     The disadvantage of this approach is that the B! grows so fast and soon it will break our fast exponentiation method.
@@ -22,7 +21,7 @@ def pollard_p_1_factorization_factorial_version(smoothness_bound,n):
     if n < 4:
         raise Exception("The argument should be equal to or larger than 4")
     # test if the argument is composite
-    result = miller_rabin_2(50,n)
+    result = is_prime(n)
     if result:
         raise Exception("The argument is not composite")
     # choose a random b, with 1<b< n-1

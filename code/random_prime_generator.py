@@ -1,4 +1,4 @@
-from miller_rabin import miller_rabin
+from is_prime import is_prime
 from random_number_generator import random_number_generator
 
 def random_prime_generator(start,end):
@@ -8,7 +8,7 @@ def random_prime_generator(start,end):
     """
     candidate = random_number_generator(start,end)
     while True:
-        if candidate % 2 != 0 and miller_rabin(50,candidate):
+        if is_prime(50,candidate):
             return candidate
         candidate = random_number_generator(start, end)
     return candidate

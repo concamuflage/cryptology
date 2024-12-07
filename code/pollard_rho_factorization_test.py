@@ -3,12 +3,12 @@ import unittest
 from miller_rabin import miller_rabin, miller_rabin_2
 from pollard_rho_factorization import pollard_rho_factorization
 
-
+#
 class MyTestClass(unittest.TestCase):
     """testing binary_string_cross_product function"""
     def test1(self):
         """for testing large composite  numbers 20-21bits"""
-        for num in range(1000000,2000000):
+        for num in range(4,10000):
             # test if the number is even
             if num % 2 == 0:
                 continue       # if even, do nothing and try the next num

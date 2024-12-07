@@ -2,6 +2,7 @@ import random
 
 from fast_expo_modulo import fast_expo_modulo
 from fast_exponentiation import fast_exponentiation
+from is_prime import is_prime
 from miller_rabin import miller_rabin
 from primitive_root_search import primitive_root_search
 from ExtendedEuclidean import extended_euclidean_2
@@ -16,7 +17,7 @@ def el_gamal_sender_prepare(prime):
     b_to_power_of_r, integer , which is b^r mod prime
     """
     # check the primality of the argument prime
-    if not miller_rabin(50,prime):
+    if not is_prime(prime):
         raise Exception(f"{prime} is not prime. Argument should be prime.")
     b = primitive_root_search(prime)[0]  # b is the primitive root
     r = random.randint(0, prime - 2)  # generate private key r
@@ -35,7 +36,7 @@ def el_gamal_receiver_prepare(b, b_to_power_of_r, prime):
     brl_inverse, which is the inverse of brl in group U(prime)
     """
     # check the primality of the argument prime
-    if not miller_rabin(50,prime):
+    if not is_prime(prime):
         raise Exception(f"{prime} is not prime. Argument should be prime.")
 
     l = random.randint(0, prime - 2)  # generate a private key
@@ -56,7 +57,7 @@ def el_gamal_encrypt(message, b_to_power_of_l, r,prime):
     :return: integer
     """
     # check the primality of the argument prime
-    if not miller_rabin(50,prime):
+    if not is_prime(prime):
         raise Exception(f"{prime} is not prime. Argument should be prime.")
 
     # check if message is in U(prime)
@@ -75,7 +76,7 @@ def el_gamal_decrypt(cipher_text, brl_inverse,prime):
     :return: an integer
     """
     # check the primality of the argument prime
-    if not miller_rabin(50,prime):
+    if not is_prime(prime):
         raise Exception(f"{prime} is not prime. Argument should be prime.")
 
     plain_text = cipher_text * brl_inverse % prime

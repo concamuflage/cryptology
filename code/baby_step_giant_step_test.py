@@ -1,7 +1,7 @@
 from EuclideanAlgo import euclidean
 from baby_step_giant_step import baby_step_giant_step
 from fast_expo_modulo import fast_expo_modulo
-from is_prime import is_prime
+from miller_rabin import miller_rabin_2
 from primitive_root_search import primitive_root_search
 
 import unittest
@@ -39,7 +39,7 @@ class MyTestClass(unittest.TestCase):
     def test1(self):
         """reiteratively test some random values"""
         for num in range(1000):
-            if is_prime(num):
+            if num % 2 == 1 and miller_rabin_2(50,num):
                 prime = num
                 root = primitive_root_search(num)[0]
                 for element in range(num):

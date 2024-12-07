@@ -1,5 +1,5 @@
 
-from miller_rabin import miller_rabin
+from is_prime import is_prime
 from random_prime_generator import random_prime_generator
 
 
@@ -11,6 +11,6 @@ def safe_prime_generator(start, end):
     while True:
         q = random_prime_generator(start,end)
         p = 2*q+1
-        if start <= p <= end and p % 2 != 0 and miller_rabin(50,p):
+        if start <= p <= end and is_prime(p):
             return p
 
