@@ -8,5 +8,5 @@ class MyTestClass(unittest.TestCase):
         for index in range(100):
             result = blum_blum_shub(index)
             self.assertEqual(len(result), index)
-            print(result)
+
 

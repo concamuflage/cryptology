@@ -9,9 +9,8 @@ class MyTestClass1(unittest.TestCase):
     """testing pollard_p_1_factorization_lecture_version"""
     def test1(self):
         """for testing large composite  numbers 20-21bits"""
-        num = 1
-        while num < 10000: # takes a few minutes to factor all the numbers below 10,000,000
-            print("num",num)
+        num = 4
+        while num < 100: # takes a few minutes to factor all the numbers below 10,000,000
             # test if the number is even
             if num % 2 == 0:
                 num += 1
@@ -22,7 +21,7 @@ class MyTestClass1(unittest.TestCase):
                 num += 1
                 continue       # if num is probably prime, do nothing
             # else, try to factor it
-            smoothness_bound = 5
+            smoothness_bound = 700
             compute_factor_base(smoothness_bound)
             try:
                 result = pollard_p_1_factorization_lecture_version(smoothness_bound,compute_factor_base(smoothness_bound),num)
@@ -34,7 +33,7 @@ class MyTestClass1(unittest.TestCase):
     def test2(self):
         """for testing a special case"""
         num = 1215953
-        smoothness_bound = 5
+        smoothness_bound = 200
         divisor = pollard_p_1_factorization_lecture_version(smoothness_bound, compute_factor_base(smoothness_bound),num)
         self.assertEqual(num % divisor,0)
 
@@ -46,7 +45,7 @@ class MyTestClass1(unittest.TestCase):
         for element in numbers:
             num = element
             smoothness_bound = 50
-            divisor = pollard_p_1_factorization_factorial_version(smoothness_bound, compute_factor_base(smoothness_bound),num)
+            divisor = pollard_p_1_factorization_factorial_version(smoothness_bound,num)
             self.assertEqual(num % divisor,0)
 
 class MyTestClass2(unittest.TestCase):

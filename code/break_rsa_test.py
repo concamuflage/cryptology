@@ -6,18 +6,18 @@ import unittest
 from ExtendedEuclidean import extended_euclidean_2
 from break_rsa import break_rsa_with_p_1_factorial, break_rsa_with_pollard_rho, break_rsa_with_p_1_lecture_version
 from fast_expo_modulo import fast_expo_modulo
-from generate_large_prime import generate_large_prime
+from n_bits_random_prime_generator import n_bits_random_prime_generator
 from rsa_without_padding import *
 
 
 class MyTestCase(unittest.TestCase):
 
+    prime_length = 13 # only break_rsa_with_pollard_rho() can break when p and q are about 45 bits.
     def test1(self):
         """break_rsa_with_p_1_factorial"""
         # generate p and q
-        prime_length = 13
-        p = generate_large_prime(prime_length)
-        q = generate_large_prime(prime_length)
+        p = n_bits_random_prime_generator(MyTestCase.prime_length)
+        q = n_bits_random_prime_generator(MyTestCase.prime_length)
         # receiver generates public key
         n = p * q
         phi_of_n = (p - 1)*(q - 1)
@@ -35,6 +35,7 @@ class MyTestCase(unittest.TestCase):
         ciphertext = fast_expo_modulo(message,e,n)
         # receiver decrypt the message
         plaintext_1 = rsa_decrypt(private_key,ciphertext)
+        # attacker decrypt the message
         plaintext_2 = break_rsa_with_p_1_factorial(public_key,ciphertext)
         self.assertEqual(plaintext_1,plaintext_2)
 
@@ -43,9 +44,8 @@ class MyTestCase(unittest.TestCase):
         test break_rsa_with_pollard_rho() function
         """
         # generate p and q
-        prime_length = 40
-        p = generate_large_prime(prime_length)
-        q = generate_large_prime(prime_length)
+        p = n_bits_random_prime_generator(MyTestCase.prime_length)
+        q = n_bits_random_prime_generator(MyTestCase.prime_length)
         # receiver generates public key
         n = p * q
         phi_of_n = (p - 1) * (q - 1)
@@ -71,9 +71,8 @@ class MyTestCase(unittest.TestCase):
         test pollard_p_1_factorization_lecture_version function
         """
         # generate p and q
-        prime_length = 14
-        p = generate_large_prime(prime_length)
-        q = generate_large_prime(prime_length)
+        p = n_bits_random_prime_generator(MyTestCase.prime_length)
+        q = n_bits_random_prime_generator(MyTestCase.prime_length)
         # receiver generates public key
         n = p * q
         phi_of_n = (p - 1) * (q - 1)

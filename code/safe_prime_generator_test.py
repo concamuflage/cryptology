@@ -21,5 +21,3 @@ class MyTestCase(unittest.TestCase):
             # test if it is a safe prime
             q = (result-1) // 2
             self.assertTrue(is_prime(q))
-
-            print(result)

@@ -7,8 +7,6 @@ class MyTestClass(unittest.TestCase):
     def test1(self):
         """testing the parameter_generator function"""
         big_n, a_pairs, g = parameter_generator(15)
-        print(big_n,g)
-        print(a_pairs)
         self.assertEqual(len(a_pairs),15)  # check if the length of list is correct
 
     def test2(self):
@@ -21,7 +19,6 @@ class MyTestClass(unittest.TestCase):
             list.append(result)
             # with 0 or 1, the test will pass.
             self.assertTrue(result == 1 or result == 0)
-        print(list)
 
 # if __name__ == "__main__":
 #     test = MyTestClass()

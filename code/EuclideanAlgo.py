@@ -2,6 +2,7 @@ import math
 
 from fast_exponentiation import fast_exponentiation
 
+# steins function implementation is provided by Chatgpt
 
 def euclidean(num1 , num2):
     """
@@ -27,24 +28,42 @@ def euclidean(num1 , num2):
 def steins(num1,num2):
     """
     use stein's method
+
     :param num1: int
     :param num2: int
     :return: gcd
     """
-    if num1 == num2:
-        return num1
-    # cover a special case that causes an infinite recursion since neither number is never reduced.
-
+    # Base cases
     if num1 == 0:
         return num2
     if num2 == 0:
         return num1
 
+    # Find the greatest power of 2 dividing both numbers
+    k = 0
+    while ((num1 | num2) & 1) == 0:  # Both num1 and num2 are even
+        num1 >>= 1
+        num2 >>= 1
+        k += 1
 
-    if num1 >= num2:
-        return steins(num1-num2,num2)
-    else:
-        return steins(num1,num2-num1)
+    # Make num1 odd
+    while (num1 & 1) == 0:
+        num1 >>= 1
+
+    while num2 != 0:
+        # Make num2 odd
+        while (num2 & 1) == 0:
+            num2 >>= 1
+
+        # Swap if necessary to ensure num1 <= num2
+        if num1 > num2:
+            num1, num2 = num2, num1
+
+        # Subtract smaller from larger
+        num2 -= num1
+
+    # Restore the common factor of 2
+    return num1 << k
 
 
 if __name__ == "__main__":

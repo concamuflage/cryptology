@@ -51,7 +51,7 @@ def break_rsa_with_p_1_lecture_version(public_key, ciphertext):
 
 
     # factor n
-    smoothness_bound = 200
+    smoothness_bound = 1000
     p = pollard_p_1_factorization_lecture_version(smoothness_bound,compute_factor_base(smoothness_bound),public_key[0])
     q = public_key[0] // p
     # find inverse of e in U(phi_of_n)

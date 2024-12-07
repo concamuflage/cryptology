@@ -19,7 +19,7 @@ result = []
 for n in range(2,10000):
     if false_fermat_pseudo(3,n):
         result.append(n)
-print(result)
+# print(result)
 
 
 

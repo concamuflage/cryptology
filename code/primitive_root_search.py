@@ -8,6 +8,7 @@ def primitive_root_search(prime_number):
 
     """
     return primitive roots / generators in group U(prime_number)
+    seems to be only good at finding primitive root of safe primes less than 23 bits.
 
     :param prime_number:
     :return: a list of primitives or an empty list.

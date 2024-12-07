@@ -19,13 +19,12 @@ class MyTestClass(unittest.TestCase):
         for root in range(0,20):
             for power in range (0,20):
                 for modulus in range (1,20):
-                    print(root, power, modulus)
                     x = fast_exponentiation(root, power) % modulus
                     y = fast_expo_modulo(root, power, modulus)
                     self.assertEqual(x, y)
-                    # try:
-                    #     self.assertEqual(fast_exponentiation(root, power) % modulus,fast_expo_modulo(root, power, modulus))
-                    # except:
-                    #     print(root,power,modulus)
+                    try:
+                        self.assertEqual(fast_exponentiation(root, power) % modulus,fast_expo_modulo(root, power, modulus))
+                    except:
+                        print(root,power,modulus)
 
 
