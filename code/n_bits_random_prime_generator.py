@@ -7,8 +7,9 @@ def n_bits_random_prime_generator(n):
     generate a n_bit random prime number
     :return: a prime number within in the range
     """
+    if n < 2:
+        raise ValueError("n must be equal to or greater than 2. You cannot generate a prime with only 1 bit")
     candidate = n_bits_random_number_generator(n)
-    while True:
-        if is_prime(candidate):
-            return candidate
+    while not is_prime(candidate):
         candidate = n_bits_random_number_generator(n)
+    return candidate

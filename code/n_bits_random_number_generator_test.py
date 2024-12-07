@@ -7,7 +7,7 @@ class MyTestCase(unittest.TestCase):
         """
         testing n_bitsrandom_number_generator function
         """
-        for index in range(100):
+        for index in range(1,1000):
             result = n_bits_random_number_generator(index)
             self.assertTrue(result.bit_length() == index)
 

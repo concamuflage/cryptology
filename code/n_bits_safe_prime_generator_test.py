@@ -9,7 +9,7 @@ class MyTestCase(unittest.TestCase):
     def test1(self):
 
 
-        for index in range(2,30):
+        for index in range(3,30):
             result =n_bits_safe_prime_generator(index)
             # test if it is a prime
             self.assertTrue(is_prime(result))
