@@ -1,20 +1,15 @@
 import math
-
-
+from miller_rabin import miller_rabin_2
 def is_prime(num):
     """
-    check if the num is prime by brute force
+    check if the num is prime by miller rabin algorithm
     :return: true or false
     """
     if num < 2:
         return False
     if num == 2:
         return True
-    num2 = math.ceil(math.sqrt(num))
-    for i in range(2,num2+1):
-        if num % i == 0:
-            return False
+    if num % 2 == 0:
+        return False
+    return miller_rabin_2(50,num)
 
-    return True
-
-# print(is_prime(61728393))

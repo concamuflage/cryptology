@@ -1,9 +1,9 @@
 from is_prime import is_prime
+import sympy
 import unittest
 
 class MyTestClass(unittest.TestCase):
     """for testing is_prime function"""
-
     def test1(self):
 
         self.assertEqual(is_prime(2),True)
@@ -19,3 +19,6 @@ class MyTestClass(unittest.TestCase):
         self.assertEqual(is_prime(6), False)
         self.assertEqual(is_prime(100), False)
         self.assertEqual(is_prime(1849), False)
+    def test3(self):
+        for index in range(2,100000):
+            self.assertEqual(is_prime(index),sympy.isprime(index))
