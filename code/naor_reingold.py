@@ -1,5 +1,6 @@
 import random
 
+from binary_string_cross_product import binary_string_cross_product
 from decimal_to_binary import decimal_to_binary
 from fast_expo_modulo import fast_expo_modulo
 from random_prime_generator import random_prime_generator
@@ -67,24 +68,6 @@ def parameter_generator(n):
     return big_n,a_pairs,g
 
 
-
-
-def binary_string_cross_product(binary_vector_1,binary_vector_2):
-    """
-    :param binary_vector_1:
-    :param binary_vector_2:
-    :return:
-    """
-    length_1 = len(binary_vector_1)
-    length_2 = len(binary_vector_2)
-    if length_1 != length_2:
-        raise Exception("The length of the vectors are not equal")
-    total = 0    # for storing the sum of product
-    for index in range(length_1):
-        pair_sum = int(binary_vector_1[index])*int(binary_vector_2[index])
-        total += pair_sum
-
-    return total % 2
 
 
 
