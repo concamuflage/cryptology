@@ -8,23 +8,15 @@ class MyTestCase(unittest.TestCase):
 
     def test1(self):
 
-
-        for index in range(3,30):
+        for index in range(50,60):
             result =n_bits_safe_prime_generator(index)
+            # test if it's length is n
+            self.assertEqual(result.bit_length(),index)
             # test if it is a prime
             self.assertTrue(is_prime(result))
             # test if it is a safe prime
             q = (result-1) // 2
             self.assertTrue(is_prime(q))
 
-    def test2(self):
 
-
-        for index in range(15,16):
-            result =n_bits_safe_prime_generator(index)
-            # test if it is a prime
-            self.assertTrue(is_prime(result))
-            # test if it is a safe prime
-            q = (result-1) // 2
-            self.assertTrue(is_prime(q))
 
