@@ -24,3 +24,5 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(result.bit_length(),index)
         # test if it is a prime
         self.assertTrue(miller_rabin(50,result))
+    def test2(self):
+        self.assertRaises(Exception,generate_large_prime,1)

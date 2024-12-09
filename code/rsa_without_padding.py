@@ -10,12 +10,8 @@ def rsa_enrypt(public_key, plaintext):
     """
     num = public_key[0]
     public_expo = public_key[1]
-    # check if plaintext is relatively prime to num
-    gcd = euclidean(plaintext,num)
-    if gcd != 1:
-        raise Exception("Error: plaintext must be an integer that is relatively prime to n in public_key")
-    # check if  1 <plaintext<n
 
+    # check if  1 <plaintext<n
     if plaintext <= 1 or plaintext >= num :
         raise Exception("Error: plaintext must be in the range 1 <plaintext<num")
     # encrypt the plaintext
@@ -39,9 +35,6 @@ def rsa_private_key_generator(public_key, prime_p, prime_q):
     phi = (prime_p - 1)*(prime_q - 1)
     # calculate the private exponent
     private_expo = extended_euclidean_2(public_expo, phi)[0]
-    #  if private_expo is negative , make it positive.
-    while private_expo < 0:
-        private_expo += phi
     # if private_expo > phi, make it smaller than phi
     private_expo = (private_expo) % phi
 
@@ -63,8 +56,8 @@ def rsa_decrypt(private_key,ciphertext):
     return plaintext
 
 
-if __name__ == "__main__":
-    pass
+# if __name__ == "__main__":
+#     pass
 
 
 

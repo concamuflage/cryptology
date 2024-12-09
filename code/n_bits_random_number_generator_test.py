@@ -18,3 +18,6 @@ class MyTestCase(unittest.TestCase):
         index = 5
         result = n_bits_random_number_generator(index)
         self.assertTrue(result.bit_length() == index)
+    def test3(self):
+        """testing exception"""
+        self.assertRaises(Exception,n_bits_random_number_generator,0)

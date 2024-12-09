@@ -21,7 +21,6 @@ def euclidean(num1 , num2):
     if small_num == 0:
         return big_num
 
-    quotient = big_num // small_num
     remainder = big_num % small_num
     return euclidean(small_num,remainder)
 
@@ -66,8 +65,8 @@ def steins(num1,num2):
     return num1 << k
 
 
-if __name__ == "__main__":
-    print("result",euclidean(5417,5588))
+# if __name__ == "__main__":
+#     print("result",euclidean(5417,5588))
 
 
 

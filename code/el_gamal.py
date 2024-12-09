@@ -1,11 +1,9 @@
 import random
 
 from fast_expo_modulo import fast_expo_modulo
-from fast_exponentiation import fast_exponentiation
 from is_prime import is_prime
-from miller_rabin import miller_rabin
-from primitive_root_search import primitive_root_search
 from ExtendedEuclidean import extended_euclidean_2
+from search_only_one_primitive_root import search_only_one_primitive_root
 
 
 def el_gamal_sender_prepare(prime):
@@ -19,7 +17,7 @@ def el_gamal_sender_prepare(prime):
     # check the primality of the argument prime
     if not is_prime(prime):
         raise Exception(f"{prime} is not prime. Argument should be prime.")
-    b = primitive_root_search(prime)[0]  # b is the primitive root
+    b = search_only_one_primitive_root(prime)  # b is the primitive root
     r = random.randint(0, prime - 2)  # generate private key r
     b_to_power_of_r = fast_expo_modulo(b, r,prime)
     return r, b, b_to_power_of_r

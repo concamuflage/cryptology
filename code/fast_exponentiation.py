@@ -19,5 +19,5 @@ def fast_exponentiaion_helper(root,power,accumulator):
         return fast_exponentiaion_helper(root,power-1,root*accumulator)
     else: 
         return fast_exponentiaion_helper(root*root,power // 2,accumulator)
-if __name__ == "__main__":
-    print(fast_exponentiation(539704,131))
+# if __name__ == "__main__":
+#     print(fast_exponentiation(539704,131))

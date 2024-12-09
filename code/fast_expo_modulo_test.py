@@ -22,9 +22,10 @@ class MyTestClass(unittest.TestCase):
                     x = fast_exponentiation(root, power) % modulus
                     y = fast_expo_modulo(root, power, modulus)
                     self.assertEqual(x, y)
-                    try:
-                        self.assertEqual(fast_exponentiation(root, power) % modulus,fast_expo_modulo(root, power, modulus))
-                    except:
-                        print(root,power,modulus)
-
+                    self.assertEqual(fast_exponentiation(root, power) % modulus,fast_expo_modulo(root, power, modulus))
+                    # except:
+                    #     print(root,power,modulus)
+    def test3(self):
+        """testing the exception"""
+        self.assertRaises(Exception,fast_expo_modulo,2,-1,5)
 

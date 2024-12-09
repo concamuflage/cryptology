@@ -42,6 +42,14 @@ class MyTestCase(unittest.TestCase):
         product = public_key[1]*private_key[1]
         self.assertEqual( product % phi_of_n,1)
 
+    def test4(self):
+        """
+        testing exceptions
+        """
+        public_key = (11,2)
+        plaintext = 1
+        self.assertRaises(Exception,rsa_enrypt,public_key,plaintext)
+
 
 
 

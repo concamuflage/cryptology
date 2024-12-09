@@ -11,10 +11,13 @@ class MyTestCase(unittest.TestCase):
             result = n_bits_random_prime_generator(index)
             self.assertTrue(result.bit_length() == index)
             self.assertTrue(is_prime(result))
-    #
-    # def test2(self):
-    #
-    #     index = 5
-    #     result = n_bits_random_prime_generator(index)
-    #     self.assertTrue(result.bit_length() == index)
-    #     self.assertTrue(is_prime(result))
+
+    def test2(self):
+
+        index = 5
+        result = n_bits_random_prime_generator(index)
+        self.assertTrue(result.bit_length() == index)
+        self.assertTrue(is_prime(result))
+
+    def test3(self):
+        self.assertRaises(Exception,n_bits_random_prime_generator,1)

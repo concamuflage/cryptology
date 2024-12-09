@@ -38,3 +38,8 @@ class MyTestClass(unittest.TestCase):
             self.assertTrue(miller_rabin(50,divisor))
             self.assertEqual(num % divisor,0)
 
+    def test3(self):
+        """for exceptions"""
+        self.assertRaises(Exception,pollard_rho_factorization,3)
+        self.assertRaises(Exception,pollard_rho_factorization, 11)
+

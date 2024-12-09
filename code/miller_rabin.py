@@ -108,8 +108,8 @@ def convert(even_int):
     m = even_int
     return (r,m)
 
-if __name__ == "__main__":
-    print(convert(1728))
+# if __name__ == "__main__":
+#     print(convert(1728))
 
 
 

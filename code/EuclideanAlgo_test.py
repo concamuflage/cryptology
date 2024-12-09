@@ -12,19 +12,8 @@ class MyTestCase(unittest.TestCase):
         for i in range(1000):
             random_num1 = random.randint(1,100)
             random_num2 = random.randint(1,100)
-
-            try:
-                result1 = steins(random_num1, random_num2)
-            except:
-                # print("steins",random_num1,random_num2)
-                return
-
-            try:
-                result2 = euclidean(random_num1, random_num2)
-            except:
-                # print("euclidean",random_num1,random_num2)
-                return
-
+            result1 = steins(random_num1, random_num2)
+            result2 = euclidean(random_num1, random_num2)
             self.assertEqual(result1,result2)
 
 
@@ -37,3 +26,8 @@ class MyTestCase(unittest.TestCase):
             result1 = steins(random_num1,random_num2)
             result2 = euclidean(random_num1,random_num2)
             self.assertEqual(result1,result2)
+
+    def test4(self):
+
+        self.assertEqual(steins(0,5),5)
+        self.assertEqual(steins(5,0),5)

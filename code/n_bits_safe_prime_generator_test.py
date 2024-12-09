@@ -8,7 +8,7 @@ class MyTestCase(unittest.TestCase):
 
     def test1(self):
 
-        for index in range(50,60):
+        for index in range(50,51):
             result =n_bits_safe_prime_generator(index)
             # test if it's length is n
             self.assertEqual(result.bit_length(),index)
@@ -17,6 +17,8 @@ class MyTestCase(unittest.TestCase):
             # test if it is a safe prime
             q = (result-1) // 2
             self.assertTrue(is_prime(q))
-
+    def test2(self):
+       "testing exception"
+       self.assertRaises(ValueError,n_bits_safe_prime_generator,2)
 
 

@@ -5,6 +5,9 @@ from EuclideanAlgo import euclidean
 from fast_expo_modulo import fast_expo_modulo
 from fast_exponentiation import fast_exponentiation
 from is_prime import is_prime
+from random_prime_generator import random_prime_generator
+
+
 def pollard_p_1_factorization_lecture_version(smoothness_bound,factor_base,n):
     """
     :param n: a composite number
@@ -20,13 +23,13 @@ def pollard_p_1_factorization_lecture_version(smoothness_bound,factor_base,n):
     if result:
         raise Exception("The argument is not composite")
     # choose a random b, with 1<b< n-1
-    b = random.randint(1,n-1)
+    b = random_prime_generator(1,n-1)
     g = euclidean(b,n)
-    if g == n:       # failure, try another b
+    if g == n:       # there is no need to increase b^x as this gcd (b^x,n) = n as well. need to change b.
         return pollard_p_1_factorization_lecture_version(smoothness_bound,factor_base,n)
-    if 1 < g < n:
+    if 1 < g < n:    # found a divisor
         return g
-    if g == 1:
+    if g == 1:      # b is relative to n.
         p = factor_base[index]
         while index < len(factor_base):
             l = math.floor(math.log(n,p))

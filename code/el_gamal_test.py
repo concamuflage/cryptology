@@ -21,6 +21,7 @@ class MyTestCase(unittest.TestCase):
             # sender prepare and send publish b and b^r
             r,b,b_to_power_of_r =el_gamal_sender_prepare(prime)
 
+
             # receiver prepare and compute b^l and the inverse of (b^r)^l in group U(prime)
             brl, b_to_power_of_l, brl_inverse = el_gamal_receiver_prepare(b,b_to_power_of_r,prime)
 
@@ -29,6 +30,7 @@ class MyTestCase(unittest.TestCase):
             cipher_text = el_gamal_encrypt(message,b_to_power_of_l,r,prime)
             plain_text = el_gamal_decrypt(cipher_text,brl_inverse,prime)
             self.assertEqual(message,plain_text)
+
 
     def test2(self):
         """
@@ -48,6 +50,22 @@ class MyTestCase(unittest.TestCase):
         cipher_text = el_gamal_encrypt(message,b_to_power_of_l,r,prime)
         plain_text = el_gamal_decrypt(cipher_text,brl_inverse,prime)
         self.assertEqual(message,plain_text)
+
+    def test3(self):
+        """
+        test the exceptions
+        """
+        self.assertRaises(Exception,el_gamal_sender_prepare,4)
+
+        r, b, b_to_power_of_r = el_gamal_sender_prepare(11)
+        self.assertRaises(Exception, el_gamal_receiver_prepare,b,b_to_power_of_r,6)
+
+        brl,b_to_power_of_l,brl_inverse = el_gamal_receiver_prepare(b,b_to_power_of_r,11)
+        message = random.randint(1, 11 - 1)
+        self.assertRaises(Exception, el_gamal_encrypt,message,b_to_power_of_l,r,10)
+        self.assertRaises(Exception, el_gamal_encrypt, 12, b_to_power_of_l, r, 10)
+        ciphertext = el_gamal_encrypt(message, b_to_power_of_l, r, 11)
+        self.assertRaises(Exception, el_gamal_decrypt,ciphertext,brl_inverse,10)
 
 
 

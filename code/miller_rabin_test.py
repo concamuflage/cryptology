@@ -19,7 +19,7 @@ class MyTestClass1(unittest.TestCase):
 
 class MyTestClass2(unittest.TestCase):
 
-    """testing convert miller_rabin function"""
+    """testing convert and miller_rabin function"""
 
     def test0(self):
         """
@@ -51,4 +51,10 @@ class MyTestClass2(unittest.TestCase):
         self.assertEqual(miller_rabin(50,24738041398529), miller_rabin_2(50,24738041398529))
         self.assertEqual(miller_rabin(50,994449669889999496698999), miller_rabin_2(50,994449669889999496698999))
 
+    def test4(self):
+        """edge cases"""
+        self.assertRaises(Exception, miller_rabin,50, 6)
+        self.assertRaises(Exception,miller_rabin_2,50,4)
+        self.assertTrue(miller_rabin_2(50,2))
+        self.assertFalse(miller_rabin_2(50,1))
 

@@ -49,6 +49,14 @@ class MyTestClass1(unittest.TestCase):
             divisor = pollard_p_1_factorization_lecture_version(smoothness_bound, factor_base, num)
             self.assertEqual(num % divisor,0)
 
+    def test4(self):
+        """for testing a special case"""
+        num = 143
+        smoothness_bound = 5
+        factor_base = compute_factor_base(smoothness_bound)
+        divisor = pollard_p_1_factorization_lecture_version(smoothness_bound, factor_base, num)
+        self.assertEqual(num % divisor,0)
+
 class MyTestClass2(unittest.TestCase):
     """testing compute_factor_base """
     def test1(self):

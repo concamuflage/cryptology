@@ -12,6 +12,7 @@ class MyTestClass(unittest.TestCase):
         self.assertEqual(primitive_root_search(2),[1])
         self.assertEqual(primitive_root_search(5),[2,3])
         self.assertEqual(primitive_root_search(3), [2])
+        self.assertRaises(Exception,primitive_root_search,6)
 
 
     def test2(self):

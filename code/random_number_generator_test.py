@@ -12,5 +12,5 @@ class MyTestCase(unittest.TestCase):
             end = 100000000
             result = random_number_generator(start,end)
             self.assertTrue(start < result < end or result == start or result == end )
-
+        self.assertRaises(Exception,random_number_generator,7,5)
 

@@ -19,8 +19,6 @@ def n_bits_safe_prime_generator(n):
 
     while True:
         q = n_bits_random_prime_generator(n - 1)
-        while not is_prime(q):
-            q = n_bits_random_prime_generator(n - 1)
         p = 2*q +1
         if is_prime(p) and p.bit_length() == n :
             return p

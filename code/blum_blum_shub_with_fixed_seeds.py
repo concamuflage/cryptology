@@ -28,8 +28,8 @@ def blum_blum_shub_with_fixed_seeds(m):
         seed = seed**2 % n
     return bit_sequence
 
-if __name__ == "__main__":
-    print(blum_blum_shub_with_fixed_seeds(3))
+# if __name__ == "__main__":
+#     print(blum_blum_shub_with_fixed_seeds(3))
 
 
 

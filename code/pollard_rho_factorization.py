@@ -38,8 +38,8 @@ def pollard_rho_factorization(n):
                 return pollard_rho_factorization(g)
             return g
 
-if __name__ == "__main__":
-    print(pollard_rho_factorization(210757))
+# if __name__ == "__main__":
+#     print(pollard_rho_factorization(210757))
 
 
 

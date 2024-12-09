@@ -6,7 +6,7 @@ from EuclideanAlgo import euclidean
 
 def extended_euclidean_2(num1,num2):
     """
-    using extended euclidean to find (x,y), with x > 0, such that x*int1+y*int2 = gcd(int1,int2) and
+    using extended euclidean to find (x,y), with num x > 0, such that x*int1+y*int2 = gcd(int1,int2) and
 
     :param num1: integer, num1 must be smaller than num2
     :param num2: integer
@@ -17,18 +17,29 @@ def extended_euclidean_2(num1,num2):
         raise Exception("num1 must be smaller than num2")
 
     result = extended_euclidean_2_helper(num1,num2)
+
+    # following steps just to make sure tha result[0] is a multiplicative inverse of num1 in U(num2)
     # if inverse is negative, convert it into a positive.
     if result[1] < 0:
         result[1] += num2
         result[2] -= num1
-    return (result[1],result[2])
+    # if inverse is larger than num2, convert it to a smaller than num2
+    # because we usually use this function to find an inverse
+    if result[1] > num2:
+        count = 0
+        while result[1] > num2:
+            result[1] = result[1] - num2
+            count += 1
+        result[2] += count * num1
+
+    return result[1],result[2]
 
 def extended_euclidean_2_helper(num1,num2):
 
-    """using Diophantine equation to
+    """using Diophantine equation
     :param num1: integer, must be smaller than num2
     :param num2: integer
-    :return: a tuple of integers (x,y), such that x*int1+y*int2 = gcd(int1,int2)
+    :return: a list of integers, [gcd,x,y ] such that x*num11+y*num2 = gcd(num11,num2)
     """
     if num1 == 0:
         return num2, 0, 1
@@ -44,8 +55,8 @@ def extended_euclidean_2_helper(num1,num2):
     list = [gcd,x,y]
     return list
 
-if __name__ == "__main__":
-    print(extended_euclidean_2(5417,5588))
+# if __name__ == "__main__":
+#     print(extended_euclidean_2(5417,5588))
 
 
 

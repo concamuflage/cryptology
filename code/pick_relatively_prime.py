@@ -11,5 +11,5 @@ def pick_relatively_prime(int):
         if euclidean(rand,int) == 1:
             return rand
 
-if __name__=="__main__":
-    print(pick_relatively_prime(54959*33107))
+# if __name__=="__main__":
+#     print(pick_relatively_prime(54959*33107))

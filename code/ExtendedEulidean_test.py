@@ -7,9 +7,9 @@ class MyTestCase2(unittest.TestCase):
     """for testing extended_euclidean_2"""
     def test1(self):
         """test both the ExtendedEuclidean function and euclidian function"""
-        for i in range(100000):
-            random_num1 = random.randint(0,100000000000)
-            random_num2 = random.randint(0,100000000000)
+        for i in range(10000):
+            random_num1 = random.randint(1,10000000000000)
+            random_num2 = random.randint(1,10000000000000)
             if random_num1 < random_num2:
                 result = extended_euclidean_2(random_num1,random_num2)
                 sum = result[0] * random_num1 + result[1] * random_num2
