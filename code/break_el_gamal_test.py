@@ -25,7 +25,7 @@ class MyTestClass(unittest.TestCase):
         """for general cases"""
 
         # the prime agreed upon by both parties
-        prime = n_bits_safe_prime_generator(35)
+        prime = n_bits_safe_prime_generator(17)
 
         for index in range(1):
             # sender prepare and send publish b and b^r

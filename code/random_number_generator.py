@@ -17,3 +17,6 @@ def random_number_generator(start,end):
         binary_string = ''.join(map(str, bit_sequence))
         decimal_number = int(binary_string, 2)
     return decimal_number
+
+# if __name__ = "__main__":
+#     print(result = random_number_generator(2,125638))

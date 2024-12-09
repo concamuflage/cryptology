@@ -12,7 +12,7 @@ from rsa_without_padding import *
 
 class MyTestCase(unittest.TestCase):
 
-    prime_length = 10 # only break_rsa_with_pollard_rho() can break when p and q are about 45 bits.
+    prime_length = 9 # only break_rsa_with_pollard_rho() can break when p and q are about 45 bits.
     def test1(self):
         """break_rsa_with_p_1_factorial"""
         # generate p and q

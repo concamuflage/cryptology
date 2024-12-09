@@ -82,3 +82,7 @@ def el_gamal_decrypt(cipher_text, brl_inverse,prime):
 
     plain_text = cipher_text * brl_inverse % prime
     return plain_text
+
+if __name__ =="__main__":
+    # print(el_gamal_receiver_prepare(2, 362690,839731))
+    print(el_gamal_decrypt(360372,132939,839731))

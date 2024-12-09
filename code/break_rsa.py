@@ -61,3 +61,5 @@ def break_rsa_with_p_1_lecture_version(public_key, ciphertext):
     plaintext = rsa_decrypt(private_key, ciphertext)
     return plaintext
 
+if __name__=="__main__":
+    print(break_rsa_with_pollard_rho((6759017329, 65537),1837778071))
