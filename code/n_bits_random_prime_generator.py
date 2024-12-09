@@ -4,8 +4,9 @@ from random_number_generator import random_number_generator
 
 def n_bits_random_prime_generator(n):
     """
-    generate a n_bit random prime number
-    :return: a prime number within in the range
+    for generating a n_bit long random prime number
+    :param n: an integer
+    :return: an n-bit long prime number
     """
     if n < 2:
         raise ValueError("n must be equal to or greater than 2. You cannot generate a prime with only 1 bit")

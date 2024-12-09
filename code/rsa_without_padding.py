@@ -4,9 +4,10 @@ from ExtendedEuclidean import extended_euclidean_2
 
 def rsa_enrypt(public_key, plaintext):
     """
+    for encrypting the plaintext with public_key
     :param public_key: a tuple (n,e) that presents the public key. e is the public exponent and n is the large number.
-    :param plaintext: int,
-    :return:
+    :param plaintext: an int
+    :return: an integer, which is the resulting ciphertext.
     """
     num = public_key[0]
     public_expo = public_key[1]
@@ -21,11 +22,11 @@ def rsa_enrypt(public_key, plaintext):
 
 def rsa_private_key_generator(public_key, prime_p, prime_q):
     """
-    to generate private_key
+    to generate the private_key
     :param public_key: a tuple of integers, that is (n,e)
-    :param prime_p: prime number
-    :param prime_q: prime number
-    :return: a tuple (number,private exponent)
+    :param prime_p: a prime number
+    :param prime_q: a prime number
+    :return: a tuple of integers,that is, (number,private_exponent)
     """
 
     num = public_key[0]
@@ -45,8 +46,9 @@ def rsa_private_key_generator(public_key, prime_p, prime_q):
 
 def rsa_decrypt(private_key,ciphertext):
     """
-    :param privatec_key: a tuple (int, int) where the second number is the private exponent
-    :param ciphertext: int
+    for producing plaintext from ciphertext
+    :param privatec_key: a tuple of integers, (int, int) , with the second number being the private exponent
+    :param ciphertext: an int
     :return: an integer that is the plaintext of ciphertext
     """
     num = private_key[0]

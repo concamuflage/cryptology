@@ -96,8 +96,8 @@ def miller_rabin_2(number_of_tests, odd_integer):
 def convert(even_int):
     """
     convert the even integer into the forma (2^r)*m, m is an odd number
-    :param even_int:
-    :return: (r,m)
+    :param even_int: an even integer
+    :return:a tuple of integers, that is, (r,m)
     """
     if even_int % 2 == 1:
         raise Exception("The argument should be an even number")

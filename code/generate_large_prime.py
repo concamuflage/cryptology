@@ -5,8 +5,8 @@ from is_prime import is_prime
 def generate_large_prime(n):
     """
     for generating an n-bit prime, based on python library function
-    :param integer
-    :return a n-bit prime integer
+    :param an integer
+    :return an n-bit prime integer
     """
     if n < 2:
         raise ValueError("n must be greater than 1")

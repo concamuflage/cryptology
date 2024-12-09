@@ -8,9 +8,9 @@ from random_prime_generator import random_prime_generator
 def search_only_one_primitive_root(prime_number):
 
     """
-    return one primitive in group U(prime_number)
+    return ONLY one primitive in group U(prime_number)
 
-    :param prime_number:
+    :param prime_number:a prime number
     :return: an integer
     """
     if prime_number == 2:

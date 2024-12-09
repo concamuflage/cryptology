@@ -10,10 +10,10 @@ from fast_exponentiation import fast_exponentiation
 from is_prime import is_prime
 def pollard_p_1_factorization_factorial_version(smoothness_bound,n):
     """
-    The disadvantage of this approach is that the B! grows so fast and soon it will break our fast exponentiation method.
-
+    for factoring n with Pollard's p-1 method with T= B!; B is the smoothness_bound of p-1.
+    The disadvantage of this approach is that the B! grows so fast ; soon it will break our fast exponentiation method.
+    :param smoothness_bound:
     :param n: a composite number
-    :factor_base: a list of all the prime numbers that are less than or equal to smoothness bound
     :return: a factor for n; the factor could be prime.
     """
     index = 0  # for iterating over the factor base.

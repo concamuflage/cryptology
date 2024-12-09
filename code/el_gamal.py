@@ -8,11 +8,12 @@ from search_only_one_primitive_root import search_only_one_primitive_root
 
 def el_gamal_sender_prepare(prime):
     """
+    for sender to do precomputations
     :param prime: a prime number
     :return:
     r, a prime integer
-    b, integer, a primitive root of group U(prime)
-    b_to_power_of_r, integer , which is b^r mod prime
+    b, integer, an integer, which is a primitive root of group U(prime)
+    b_to_power_of_r, an integer , which is b^r mod prime
     """
     # check the primality of the argument prime
     if not is_prime(prime):
@@ -25,13 +26,14 @@ def el_gamal_sender_prepare(prime):
 
 def el_gamal_receiver_prepare(b, b_to_power_of_r, prime):
     """
+    for receiver to do precomputations
     :param b: integer, which is the primitive root of the group
     :param b_to_power_of_r: which is b^r mod p, shared by the sender.
     :param prime: a prime number
     :return:
-    brl, which (b^r)^l mod prime ;
-    b_to_power_of_l, which is (b^l) mod prime ;
-    brl_inverse, which is the inverse of brl in group U(prime)
+    brl, an integer, which is (b^r)^l mod prime ;
+    b_to_power_of_l, an integer, which is (b^l) mod prime ;
+    brl_inverse, and integer, which is the inverse of brl in group U(prime)
     """
     # check the primality of the argument prime
     if not is_prime(prime):
@@ -48,11 +50,12 @@ def el_gamal_receiver_prepare(b, b_to_power_of_r, prime):
 
 def el_gamal_encrypt(message, b_to_power_of_l, r,prime):
     """
+    for sender to encrypt the message
     :param message: an integer , which represents the message to be encrypted.
     :param b_to_power_of_l: an integer, which is provided by the receiver
     :param r: an integer, which is generated in the preparation stage of the cipher
     :param prime: a prime number
-    :return: integer
+    :return: an integer
     """
     # check the primality of the argument prime
     if not is_prime(prime):
@@ -67,9 +70,9 @@ def el_gamal_encrypt(message, b_to_power_of_l, r,prime):
 
 def el_gamal_decrypt(cipher_text, brl_inverse,prime):
     """
-
-    :param cipher_text: integer
-    :param brl_inverse: integer
+    for receiver to decrypt the ciphertex
+    :param cipher_text: an integer
+    :param brl_inverse: an integer
     :param prime:  a prime integer
     :return: an integer
     """

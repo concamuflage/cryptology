@@ -2,9 +2,9 @@ from blum_blum_shub import blum_blum_shub
 
 def n_bits_random_number_generator(n):
     """
-    for generating a n_bit random number, with n > 0
-    :param n, integer
-    :return: a n-bit random decimal number
+    for generating an n_bit long random number, with n > 0
+    :param n, an integer
+    :return: an n-bit random decimal number
     """
     if n <= 0:
         raise ValueError("n must not be less than 1")

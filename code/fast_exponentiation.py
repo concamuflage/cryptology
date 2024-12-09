@@ -1,7 +1,6 @@
 def fast_exponentiation(root, power):
     """
-    it seems this algorithm starts to struggle when power = 10!
-    find the result of root to the power using fast exponentiation
+    for calculating root^power with fast exponentiation
     root:int
     power: int
     return an int

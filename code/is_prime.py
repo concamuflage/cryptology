@@ -2,7 +2,7 @@ import math
 from miller_rabin import miller_rabin_2
 def is_prime(num):
     """
-    check if the num is prime by miller rabin algorithm
+    check if the num is prime with miller-rabin algorithm
     :return: true or false
     """
     if num < 2:

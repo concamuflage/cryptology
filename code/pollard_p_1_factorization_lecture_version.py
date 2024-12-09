@@ -10,9 +10,10 @@ from random_prime_generator import random_prime_generator
 
 def pollard_p_1_factorization_lecture_version(smoothness_bound,factor_base,n):
     """
+    for finding a prime factor of n
     :param n: a composite number
     :factor_base: a list of all the prime numbers that are less than or equal to smoothness bound
-    :return: a factor for n; the factor could be prime.
+    :return: a prime factor for n
     """
     index = 0  # for iterating over the factor base.
     # test if the argument is bigger than 4

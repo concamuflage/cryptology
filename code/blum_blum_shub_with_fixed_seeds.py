@@ -5,6 +5,7 @@ def blum_blum_shub_with_fixed_seeds(m):
     """
     to generate a sequence of pseudorandom bits of length m
     :param m, integer
+    :return a list of 1's and 0's
     """
 
     # to generate p and q such that p % 4 =3 and q % 4 = 3

@@ -4,8 +4,8 @@ from primitive_root_search import primitive_root_search
 from fast_expo_modulo import fast_expo_modulo
 def baby_step_giant_step(base, target, prime_modulus):
     """
-    let r be the primitive root for  prime_modulus
-    This function returns an x such that r ^x = target % prime_modulus
+    Let r be a primitive root for  prime_modulus
+    This function returns an x such that r^x = target % prime_modulus
     :return: an integer
     """
 

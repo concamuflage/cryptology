@@ -7,9 +7,9 @@ from fast_exponentiation import fast_exponentiation
 def euclidean(num1 , num2):
     """
     this function uses Euclidean algorithms to compute gcd of two given numbers.
-    :param num1: integer
-    :param num2: integer
-    :return: gcd of num1 and num 2
+    :param num1: an integer
+    :param num2: an integer
+    :return: an integer, which is the gcd of num1 and num 2
     """
     if num1 >= num2:
         big_num = num1

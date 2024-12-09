@@ -8,9 +8,9 @@ from rsa_without_padding import *
 def break_rsa_with_pollard_rho(public_key, ciphertext):
     """
     break rsa ciphertext with Pollard's rho method.
-    :param public_key:
-    :param ciphertext:
-    :return: integer
+    :param public_key: a tuple of integers, that is, (n,e)
+    :param ciphertext: an integer
+    :return: an integer
     """
     # factor n
     p = pollard_rho_factorization(public_key[0])
@@ -25,7 +25,7 @@ def break_rsa_with_pollard_rho(public_key, ciphertext):
 def break_rsa_with_p_1_factorial(public_key,ciphertext):
     """
     break rsa ciphertext with Pollard's p-1 method(B! version).
-    :param public_key: a tuple with (n,e)
+    :param public_key: a tuple of integers, that is, (n,e)
     :param ciphertext: an integer
     :return: an integer
     """
@@ -44,7 +44,7 @@ def break_rsa_with_p_1_lecture_version(public_key, ciphertext):
 
     """
     break rsa ciphertext with Pollard's p-1 method(textbook version).
-    :param public_key: a tuple with (n,e)
+    :param public_key: a tuple of integers, that is, (n,e)
     :param ciphertext: an integer
     :return: an integer
     """
