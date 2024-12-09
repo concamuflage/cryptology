@@ -4,7 +4,7 @@ from fast_expo_modulo import fast_expo_modulo
 from is_prime import is_prime
 from ExtendedEuclidean import extended_euclidean_2
 from search_only_one_primitive_root import search_only_one_primitive_root
-
+from random_number_generator import random_number_generator
 
 def el_gamal_sender_prepare(prime):
     """
@@ -19,7 +19,7 @@ def el_gamal_sender_prepare(prime):
     if not is_prime(prime):
         raise Exception(f"{prime} is not prime. Argument should be prime.")
     b = search_only_one_primitive_root(prime)  # b is the primitive root
-    r = random.randint(0, prime - 2)  # generate private key r
+    r = random_number_generator(0, prime - 2)  # generate private key r
     b_to_power_of_r = fast_expo_modulo(b, r,prime)
     return r, b, b_to_power_of_r
 
@@ -39,7 +39,7 @@ def el_gamal_receiver_prepare(b, b_to_power_of_r, prime):
     if not is_prime(prime):
         raise Exception(f"{prime} is not prime. Argument should be prime.")
 
-    l = random.randint(0, prime - 2)  # generate a private key
+    l = random_number_generator(0, prime - 2)  # generate a private key
     b_to_power_of_l = fast_expo_modulo(b, l,prime)
     # computes (b^r)^l
     brl = fast_expo_modulo(b_to_power_of_r, l,prime)
