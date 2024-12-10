@@ -54,9 +54,9 @@ def extended_euclidean_2_helper(num1,num2):
 
     list = [gcd,x,y]
     return list
-
+#
 # if __name__ == "__main__":
-#     print(extended_euclidean_2(5417,5588))
+#     print(extended_euclidean_2(517945,839731))
 
 
 

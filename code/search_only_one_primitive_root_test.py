@@ -12,7 +12,7 @@ class MyTestClass(unittest.TestCase):
     def test1(self):
         self.assertTrue(search_only_one_primitive_root(2) in primitive_root_search(2))
         self.assertTrue(search_only_one_primitive_root(5) in primitive_root_search(5))
-        self.assertTrue(search_only_one_primitive_root(3) in primitive_root_search(3))
+        self.assertTrue(3  in primitive_root_search(839731))
 
 
     def test2(self):

@@ -19,9 +19,9 @@ def break_el_gamal(cipher_text, p,b, b_to_power_of_r,b_to_power_of_l):
     brl_inverse = extended_euclidean_2(brl,p)[0]
     plain_text = cipher_text* brl_inverse % p
     return plain_text
-
+#
 # if __name__ == "__main__":
-#     plaintext = break_el_gamal(,32507, 28411, 417,)
+#     print(break_el_gamal(25774002,205823,94379,27883,27883))
 
 
 

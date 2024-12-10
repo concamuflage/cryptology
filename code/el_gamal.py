@@ -39,7 +39,8 @@ def el_gamal_receiver_prepare(b, b_to_power_of_r, prime):
     if not is_prime(prime):
         raise Exception(f"{prime} is not prime. Argument should be prime.")
 
-    l = random_number_generator(0, prime - 2)  # generate a private key
+    l = random_number_generator(0, prime - 2)
+    # generate a private key
     b_to_power_of_l = fast_expo_modulo(b, l,prime)
     # computes (b^r)^l
     brl = fast_expo_modulo(b_to_power_of_r, l,prime)
@@ -82,7 +83,8 @@ def el_gamal_decrypt(cipher_text, brl_inverse,prime):
 
     plain_text = cipher_text * brl_inverse % prime
     return plain_text
-
-if __name__ =="__main__":
-    # print(el_gamal_receiver_prepare(2, 362690,839731))
-    print(el_gamal_decrypt(360372,132939,839731))
+#
+# if __name__ =="__main__":
+#     # print(el_gamal_receiver_prepare(3,156229 ,839731))
+#     # print(el_gamal_decrypt(638336,344169,839731))
+#     print(el_gamal_encrypt(888,60090,6921,80687))

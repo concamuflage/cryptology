@@ -45,8 +45,8 @@ def primitive_root_search(prime_number):
             primitive_roots.append(element)
 
     return primitive_roots
-
-# print(primitive_root_search(9511))
+# if __name__ =="__main__":
+#     print(primitive_root_search(839731))
 
 
 
